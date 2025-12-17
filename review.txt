@@ -1,0 +1,18 @@
+
+how to create a schema with mongoose
+
+1- use mongoose.schema({
+	username: {
+			type: string, 
+			required: true,
+			unique: true,
+			trim: true,
+			Enum: [st, st],
+			default : st
+
+}, { timestamps: true })
+
+how to create a model with mongoose
+
+mongoose.model("User, userSchema)
+
