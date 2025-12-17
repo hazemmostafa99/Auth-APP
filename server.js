@@ -15,6 +15,10 @@ app.use(morgan("dev"));
 
 const PORT = process.env.PORT || 8000;
 
+app.get("/", (req, res) => {
+  res.send("Hello from Auth APP");
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/home", homeRoutes);
 app.use("/api/admin", adminRoutes);
