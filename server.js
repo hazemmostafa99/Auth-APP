@@ -9,6 +9,8 @@ const homeRoutes = require("./routes/home");
 const adminRoutes = require("./routes/admin");
 const uploadRoutes = require("./routes/image");
 const app = express();
+connectTODB();
+
 // Middlewares
 app.use(express.json());
 app.use(morgan("dev"));
@@ -24,7 +26,6 @@ app.use("/api/home", homeRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/image", uploadRoutes);
 
-app.listen(PORT, async () => {
-  await connectTODB();
+app.listen(PORT, () => {
   console.log(`Serever is running on port ${PORT}`);
 });
